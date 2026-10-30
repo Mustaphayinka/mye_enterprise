@@ -685,7 +685,7 @@ export const seedProducts: Product[] = [
 ];
 
 export const defaultSettings: Settings = {
-  store_name: "Mye Stores",
+  store_name: "Mye Enterprise",
   tagline: "Everyday essentials for your kitchen, home and room",
   hero_title: "Quality home & kitchen essentials, at student-friendly prices",
   hero_subtitle: "Browse the store, add what you like to your cart, and send your order straight to us on WhatsApp.",

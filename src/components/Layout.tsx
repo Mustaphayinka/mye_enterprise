@@ -40,7 +40,7 @@ function Header() {
   const [q, setQ] = useState("");
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  useEffect(() => setMenu(false), [pathname]);
+  useEffect(() => { setMenu(false); }, [pathname]);
 
   const search = (e: React.FormEvent) => {
     e.preventDefault();
@@ -169,7 +169,8 @@ function FloatingWhatsApp() {
 export function Layout() {
   const { settings, error } = useStore();
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // Braces matter: newer browsers return a Promise from scrollTo, and React would treat it as a clean-up function.
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return (
     <div className="flex min-h-screen flex-col">
       {isDemo && (

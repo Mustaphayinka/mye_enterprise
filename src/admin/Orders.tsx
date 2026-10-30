@@ -25,7 +25,7 @@ export default function Orders() {
       setError(e instanceof Error ? e.message : "Could not load orders.");
     }
   }, []);
-  useEffect(() => void load(), [load]);
+  useEffect(() => { void load(); }, [load]);
 
   const setStatus = async (o: Order, status: OrderStatus) => {
     setOrders(os => os?.map(x => (x.id === o.id ? { ...x, status } : x)) ?? null);

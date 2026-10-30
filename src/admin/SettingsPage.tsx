@@ -48,7 +48,7 @@ export default function SettingsPage() {
   const [form, setForm] = useState<Settings>(settings);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState<{ kind: "error" | "success"; text: string } | null>(null);
-  useEffect(() => setForm(settings), [settings]);
+  useEffect(() => { setForm(settings); }, [settings]);
 
   const save = async (e: React.FormEvent) => {
     e.preventDefault();

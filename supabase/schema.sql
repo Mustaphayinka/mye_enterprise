@@ -1,4 +1,4 @@
--- Mye Stores database. Run once in Supabase: SQL Editor -> New query -> paste -> Run.
+-- Mye Enterprise database. Run once in Supabase: SQL Editor -> New query -> paste -> Run.
 -- Security model: anyone can READ products, categories and settings, and can PLACE an order.
 -- Only users listed in `admins` can change anything or read orders.
 
@@ -31,7 +31,7 @@ create index if not exists products_category_idx on products(category_id);
 
 create table if not exists settings (
   id int primary key default 1 check (id = 1),   -- exactly one row
-  store_name text not null default 'Mye Stores',
+  store_name text not null default 'Mye Enterprise',
   tagline text not null default '',
   hero_title text not null default '',
   hero_subtitle text not null default '',
@@ -127,7 +127,7 @@ create policy "admin delete product images" on storage.objects
 
 -- ---------- default settings row ----------
 insert into settings (id, store_name, tagline, hero_title, hero_subtitle, whatsapp, phone, address, hours)
-values (1, 'Mye Stores',
+values (1, 'Mye Enterprise',
   'Everyday essentials for your kitchen, home and room',
   'Quality home & kitchen essentials, at student-friendly prices',
   'Browse the store, add what you like to your cart, and send your order straight to us on WhatsApp.',

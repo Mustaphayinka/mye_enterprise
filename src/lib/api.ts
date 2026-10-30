@@ -144,7 +144,7 @@ function supabaseApi(): Api {
 }
 
 // ---------------------------------------------------------------------- Demo
-const DEMO_KEY = "mye-demo-v1";
+const DEMO_KEY = "mye-demo-v2"; // v2: renamed to Mye Enterprise (old demo data is ignored)
 export const DEMO_PASSWORD = "demo1234";
 
 interface DemoState {
@@ -266,7 +266,7 @@ function demoApi(): Api {
       if (password !== DEMO_PASSWORD) throw new Error("Wrong email or password.");
       state.admin = true;
       save();
-      listeners.forEach(l => l(true, "demo@myestores"));
+      listeners.forEach(l => l(true, "demo@myeenterprise"));
     },
     async signOut() {
       state.admin = false;
@@ -275,7 +275,7 @@ function demoApi(): Api {
     },
     watchAdmin(cb) {
       state = load();
-      cb(state.admin, state.admin ? "demo@myestores" : null);
+      cb(state.admin, state.admin ? "demo@myeenterprise" : null);
       listeners.add(cb);
       return () => void listeners.delete(cb);
     },

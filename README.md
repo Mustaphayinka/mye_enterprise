@@ -1,6 +1,6 @@
-# Mye Stores
+# Mye Enterprise
 
-Online store for Mye Stores: kitchen, home and personal-care essentials. Customers browse,
+Online store for Mye Enterprise: kitchen, home and personal-care essentials. Customers browse,
 add to cart and send their order on WhatsApp. The owner manages everything from `/admin`.
 
 Built with React, TypeScript, Tailwind CSS v4 and Vite. Supabase provides the database,
